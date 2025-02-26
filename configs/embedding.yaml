@@ -1,0 +1,7 @@
+clients:
+  base:
+    model_name: 'intfloat/multilingual-e5-large'
+    driver: 'cpu'
+  simple:
+    model_name: 'all-MiniLM-L6-v2'
+    driver: 'cpu'

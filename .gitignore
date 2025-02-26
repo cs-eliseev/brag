@@ -1,0 +1,5 @@
+.vanv
+databases/*
+datasets/*
+configs/.env
+test.py

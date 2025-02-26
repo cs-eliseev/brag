@@ -1,0 +1,16 @@
+git+ssh://git@github.com/cs-eliseev/di_autoloader.git
+git+ssh://git@github.com/cs-eliseev/config_loader.git
+
+langchain~=0.3.19
+requests~=2.32.3
+pydantic~=2.10.6
+langchain-community~=0.3.18
+langchain-core~=0.3.37
+loguru~=0.7.3
+langchain-text-splitters~=0.3.6
+numpy~=1.26.4
+chardet~=5.2.0
+beautifulsoup4~=4.13.3
+scikit-learn~=1.6.1
+dotenv~=0.9.9
+python-dotenv~=1.0.1

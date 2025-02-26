@@ -1,0 +1,4 @@
+models:
+  llama3_3:
+    model: 'llama3.3'
+    temperature: 0

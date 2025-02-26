@@ -1,0 +1,6 @@
+clients:
+  base:
+    app_key: ${GOOGLE_SEARCH_APP}
+    app_secret: ${GOOGLE_SEARCH_KEY}
+    api_url: https://www.googleapis.com/customsearch/v1
+    chunk_size: 1000

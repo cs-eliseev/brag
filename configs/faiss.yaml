@@ -1,0 +1,7 @@
+storage:
+  simple:
+    db_path: 'databases/db_01'
+    embeddings:
+      container: embedding_driver
+    log:
+      container: log
