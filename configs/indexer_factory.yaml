@@ -1,0 +1,149 @@
+forward_indexer:
+  other_chunk:
+    db_client:
+      container: faiss_db_driver__other_chunk
+    file_loader:
+      container: json_file_loader
+  documents:
+    db_client:
+      container: faiss_db_driver__documents
+    file_loader:
+      container: json_file_loader
+  documents__html:
+    db_client:
+      container: faiss_db_driver__documents_html
+    file_loader:
+      container: json_file_loader
+  documents__md:
+    db_client:
+      container: faiss_db_driver__documents_md
+    file_loader:
+      container: json_file_loader
+
+splitter_indexer:
+#  512:
+#    splitter:
+#      container: recursive_text_splitter__512
+#    db_client:
+#      container: faiss_db_driver__512
+#    file_loader:
+#      container: json_file_loader
+  "512_64":
+    splitter:
+      container: recursive_text_splitter__512_64
+    db_client:
+      container: faiss_db_driver__512_64
+    file_loader:
+      container: json_file_loader
+  "1024":
+    splitter:
+      container: recursive_text_splitter__1024
+    db_client:
+      container: faiss_db_driver__1024
+    file_loader:
+      container: json_file_loader
+  "1024_128":
+    splitter:
+      container: recursive_text_splitter__1024_128
+    db_client:
+      container: faiss_db_driver__1024_128
+    file_loader:
+      container: json_file_loader
+  "2048":
+    splitter:
+      container: recursive_text_splitter__2048
+    db_client:
+      container: faiss_db_driver__2048
+    file_loader:
+      container: json_file_loader
+  "2048_256":
+    splitter:
+      container: recursive_text_splitter__2048_256
+    db_client:
+      container: faiss_db_driver__2048_256
+    file_loader:
+      container: json_file_loader
+  "512__html":
+    splitter:
+      container: recursive_text_splitter__512
+    db_client:
+      container: faiss_db_driver__512_html
+    file_loader:
+      container: json_file_loader
+  "512_64__html":
+    splitter:
+      container: recursive_text_splitter__512_64
+    db_client:
+      container: faiss_db_driver__512_64_html
+    file_loader:
+      container: json_file_loader
+  "1024__html":
+    splitter:
+      container: recursive_text_splitter__1024
+    db_client:
+      container: faiss_db_driver__1024_html
+    file_loader:
+      container: json_file_loader
+  "1024_128__html":
+    splitter:
+      container: recursive_text_splitter__1024_128
+    db_client:
+      container: faiss_db_driver__1024_128_html
+    file_loader:
+      container: json_file_loader
+  "2048__html":
+    splitter:
+      container: recursive_text_splitter__2048
+    db_client:
+      container: faiss_db_driver__2048_html
+    file_loader:
+      container: json_file_loader
+  "2048_256__html":
+    splitter:
+      container: recursive_text_splitter__2048_256
+    db_client:
+      container: faiss_db_driver__2048_256_html
+    file_loader:
+      container: json_file_loader
+  "512__md":
+    splitter:
+      container: recursive_text_splitter__512
+    db_client:
+      container: faiss_db_driver__512_md
+    file_loader:
+      container: json_file_loader
+  "512_64__md":
+    splitter:
+      container: recursive_text_splitter__512_64
+    db_client:
+      container: faiss_db_driver__512_64_md
+    file_loader:
+      container: json_file_loader
+  "1024__md":
+    splitter:
+      container: recursive_text_splitter__1024
+    db_client:
+      container: faiss_db_driver__1024_md
+    file_loader:
+      container: json_file_loader
+  "1024_128__md":
+    splitter:
+      container: recursive_text_splitter__1024_128
+    db_client:
+      container: faiss_db_driver__1024_128_md
+    file_loader:
+      container: json_file_loader
+  "2048__md":
+    splitter:
+      container: recursive_text_splitter__2048
+    db_client:
+      container: faiss_db_driver__2048_md
+    file_loader:
+      container: json_file_loader
+  "2048_256__md":
+    splitter:
+      container: recursive_text_splitter__2048_256
+    db_client:
+      container: faiss_db_driver__2048_256_md
+    file_loader:
+      container: json_file_loader
