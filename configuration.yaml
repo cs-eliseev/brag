@@ -30,22 +30,22 @@ container:
     provider: Factory
     provides: rag.modules.splitters.recursive_character_text_splitter.RecursiveCharacterTextSplitterWrapper
     kwargs_factory:
-      512:
+      "512":
         chunk_size: 512
         chunk_overlap: 0
-      512_64:
+      "512_64":
         chunk_size: 512
         chunk_overlap: 64
-      1024:
+      "1024":
         chunk_size: 1024
         chunk_overlap: 0
-      1024_128:
+      "1024_128":
         chunk_size: 1024
         chunk_overlap: 128
-      2048:
+      "2048":
         chunk_size: 2048
         chunk_overlap: 0
-      2048_256:
+      "2048_256":
         chunk_size: 2048
         chunk_overlap: 256
 
@@ -88,38 +88,7 @@ container:
     provider: Singleton
     provides: rag.drivers.databases.faiss_db.FaissDB
     kwargs_factory:
-      other_chunk:
-        db_path: 'databases/other_chunk'
-        embeddings:
-          container: embedding_driver
-      documents:
-        db_path: 'databases/documents'
-        embeddings:
-          container: embedding_driver
-      recursive_512:
-        db_path: 'databases/recursive_512'
-        embeddings:
-          container: embedding_driver
-      recursive_512_64:
-        db_path: 'databases/recursive_512_64'
-        embeddings:
-          container: embedding_driver
-      recursive_1024:
-        db_path: 'databases/recursive_1024'
-        embeddings:
-          container: embedding_driver
-      recursive_1024_128:
-        db_path: 'databases/recursive_1024_128'
-        embeddings:
-          container: embedding_driver
-      recursive_2048:
-        db_path: 'databases/recursive_2048'
-        embeddings:
-          container: embedding_driver
-      recursive_2048_256:
-        db_path: 'databases/recursive_2048_256'
-        embeddings:
-          container: embedding_driver
+      config: faiss_factory.items
 
 # Other:
   chunk_utils:
@@ -217,60 +186,10 @@ container:
     provider: Factory
     provides: rag.modules.indexes.forward_indexer.ForwardIndexer
     kwargs_factory:
-      other_chunk:
-        db_client:
-          container: faiss_db_driver__other_chunk
-        file_loader:
-          container: json_file_loader
-      documents:
-        db_client:
-          container: faiss_db_driver__documents
-        file_loader:
-          container: json_file_loader
+      config: indexer_factory.forward_indexer
 
   splitter_indexer:
     provider: Factory
-    provides: rag.modules.indexes.forward_indexer.ForwardIndexer
+    provides: rag.modules.indexes.splitter_indexer.SimpleIndexer
     kwargs_factory:
-      512:
-        splitter:
-          container: recursive_text_splitter__512
-        db_client:
-          container: faiss_db_driver__512
-        file_loader:
-          container: json_file_loader
-      512_64:
-        splitter:
-          container: recursive_text_splitter__512_64
-        db_client:
-          container: faiss_db_driver__512_64
-        file_loader:
-          container: json_file_loader
-      1024:
-        splitter:
-          container: recursive_text_splitter__1024
-        db_client:
-          container: faiss_db_driver__1024
-        file_loader:
-          container: json_file_loader
-      1024_128:
-        splitter:
-          container: recursive_text_splitter__1024_128
-        db_client:
-          container: faiss_db_driver__1024_128
-        file_loader:
-          container: json_file_loader
-      2048:
-        splitter:
-          container: recursive_text_splitter__2048
-        db_client:
-          container: faiss_db_driver__2048
-        file_loader:
-          container: json_file_loader
-      2048_256:
-        splitter:
-          container: recursive_text_splitter__2048_256
-        db_client:
-          container: faiss_db_driver__2048_256
-        file_loader:
-          container: json_file_loader
+      config: indexer_factory.splitter_indexer

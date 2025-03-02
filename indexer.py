@@ -10,8 +10,8 @@ class UndefinedIndexer(Exception):
         super().__init__(f"Undefined indexer: '{indexer_type}'")
 
 class IndexerNotFound(ValueError):
-    def __init__(self, indexer: str):
-        super().__init__(f"Indexer '{indexer}' not found in container")
+    def __init__(self, indexer_name: str):
+        super().__init__(f"Indexer '{indexer_name}' not found in container")
 
 class UndefinedIndexerHandler(Exception):
     def __init__(self, index_type: str, index_handler_type: str):
@@ -29,9 +29,9 @@ def validate_args(args) -> None:
     if configs.get(f"container.{args.indexer_type}.kwargs_factory.{args.handler_type}") is None:
         raise UndefinedIndexerHandler(args.indexer_type, args.handler_type)
 
-    path = dataset_path(args.dataset_filename)
+    path = dataset_path(file=args.dataset_filename)
     if not path.is_file():
-        raise DatasetFileNotFound(path)
+        raise DatasetFileNotFound(path=path)
 
 parser = argparse.ArgumentParser()
 
@@ -44,11 +44,10 @@ validate_args(args)
 
 # optimization init
 from rag.bootstrap.bootstrap import container
-indexer = f"{args.indexer_type}__{args.handler_type}"
-indexer_provider = container.providers.get(indexer)
+indexer_name = f"{args.indexer_type}__{args.handler_type}"
+indexer_provider = container.providers.get(indexer_name)
 if indexer_provider is None:
-    raise IndexerNotFound(indexer)
-indexer_instance = indexer_provider()
-print(f"Use indexer: {indexer}")
-indexer_instance.index(dataset_path(args.dataset_filename))
-print('success')
+    raise IndexerNotFound(indexer=indexer_name)
+container.log().info(f"Use indexer: {indexer_name}")
+indexer_provider().index_by_path(dataset_path(args.dataset_filename))
+container.log().info('success')

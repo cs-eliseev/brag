@@ -1,0 +1,89 @@
+items:
+  "other_chunk":
+    db_path: 'databases/other_chunk'
+    embeddings:
+      container: embedding_driver
+  "documents":
+    db_path: 'databases/documents'
+    embeddings:
+      container: embedding_driver
+  "documents_html":
+    db_path: 'databases/documents_html'
+    embeddings:
+      container: embedding_driver
+  "documents_md":
+    db_path: 'databases/documents_md'
+    embeddings:
+      container: embedding_driver
+  "512":
+    db_path: 'databases/recursive_512'
+    embeddings:
+      container: embedding_driver
+  "512_64":
+    db_path: 'databases/recursive_512_64'
+    embeddings:
+      container: embedding_driver
+  "1024":
+    db_path: 'databases/recursive_1024'
+    embeddings:
+      container: embedding_driver
+  "1024_128":
+    db_path: 'databases/recursive_1024_128'
+    embeddings:
+      container: embedding_driver
+  "2048":
+    db_path: 'databases/recursive_2048'
+    embeddings:
+      container: embedding_driver
+  "2048_256":
+    db_path: 'databases/recursive_2048_256'
+    embeddings:
+      container: embedding_driver
+  "512_html":
+    db_path: 'databases/recursive_512_html'
+    embeddings:
+      container: embedding_driver
+  "512_64_html":
+    db_path: 'databases/recursive_512_64_html'
+    embeddings:
+      container: embedding_driver
+  "1024_html":
+    db_path: 'databases/recursive_1024_html'
+    embeddings:
+      container: embedding_driver
+  "1024_128_html":
+    db_path: 'databases/recursive_1024_128_html'
+    embeddings:
+      container: embedding_driver
+  "2048_html":
+    db_path: 'databases/recursive_2048_html'
+    embeddings:
+      container: embedding_driver
+  "2048_256_html":
+    db_path: 'databases/recursive_2048_256_html'
+    embeddings:
+      container: embedding_driver
+  "512_md":
+    db_path: 'databases/recursive_512_md'
+    embeddings:
+      container: embedding_driver
+  "512_64_md":
+    db_path: 'databases/recursive_512_64_md'
+    embeddings:
+      container: embedding_driver
+  "1024_md":
+    db_path: 'databases/recursive_1024_md'
+    embeddings:
+      container: embedding_driver
+  "1024_128_md":
+    db_path: 'databases/recursive_1024_128_md'
+    embeddings:
+      container: embedding_driver
+  "2048_md":
+    db_path: 'databases/recursive_2048_md'
+    embeddings:
+      container: embedding_driver
+  "2048_256_md":
+    db_path: 'databases/recursive_2048_256_md'
+    embeddings:
+      container: embedding_driver
