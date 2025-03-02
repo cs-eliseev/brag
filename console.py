@@ -35,5 +35,5 @@ if __name__ == "__main__":
         commands=Command(),
         console_service=ConsoleService(),
         rag=container.rag(),
-        log=container.log()
+        log=container.log(),
     ).run()
