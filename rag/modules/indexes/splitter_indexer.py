@@ -21,7 +21,6 @@ class SimpleIndexer(IndexerContract):
 
     def index(self, documents: DocumentCollection) -> None:
         dataset = []
-        print(self.splitter.__class__.__name__)
         for document in documents.all():
             chunks = self.splitter.split_text(document.text)
             for chunk in chunks:
