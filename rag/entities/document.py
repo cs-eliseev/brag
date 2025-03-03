@@ -38,3 +38,9 @@ class DocumentCollection:
         for item in self.items:
             yield item
         return []
+
+    def not_empty(self) -> bool:
+        return bool(self.items)
+
+    def empty(self) -> bool:
+        return not self.not_empty()
