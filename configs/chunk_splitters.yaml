@@ -1,0 +1,19 @@
+chunks:
+  "512":
+    chunk_size: 512
+    chunk_overlap: 0
+  "512_64":
+    chunk_size: 512
+    chunk_overlap: 64
+  "1024":
+    chunk_size: 1024
+    chunk_overlap: 0
+  "1024_128":
+    chunk_size: 1024
+    chunk_overlap: 128
+  "2048":
+    chunk_size: 2048
+    chunk_overlap: 0
+  "2048_256":
+    chunk_size: 2048
+    chunk_overlap: 256

@@ -30,24 +30,19 @@ container:
     provider: Factory
     provides: rag.modules.splitters.recursive_character_text_splitter.RecursiveCharacterTextSplitterWrapper
     kwargs_factory:
-      "512":
-        chunk_size: 512
-        chunk_overlap: 0
-      "512_64":
-        chunk_size: 512
-        chunk_overlap: 64
-      "1024":
-        chunk_size: 1024
-        chunk_overlap: 0
-      "1024_128":
-        chunk_size: 1024
-        chunk_overlap: 128
-      "2048":
-        chunk_size: 2048
-        chunk_overlap: 0
-      "2048_256":
-        chunk_size: 2048
-        chunk_overlap: 256
+      config: chunk_splitters.chunks
+
+  html_text_splitter:
+    provider: Factory
+    provides: rag.modules.splitters.html_text_splitter.HTMLSectionSplitterWrapper
+    kwargs_factory:
+      config: chunk_splitters.chunks
+
+  md_text_splitter:
+    provider: Factory
+    provides: rag.modules.splitters.markdown_text_splitter.MarkdownHeaderTextSplitterWrapper
+    kwargs_factory:
+      config: chunk_splitters.chunks
 
   json_file_loader:
     provider: Factory
