@@ -1,6 +1,7 @@
 import re
 from rag.contracts.prompt import PromptContract
 from rag.entities.document import DocumentCollection
+from string import Template
 
 REG_MORE_NEXT_LINE: str = r'\n{2,}'
 
@@ -12,7 +13,7 @@ class Prompt(PromptContract):
         if 'context' in kwargs:
             kwargs['context'] = self._format_documents(kwargs['context'])
 
-        return self.prompt.format(**kwargs)
+        return Template(self.prompt).safe_substitute(kwargs)
 
     @staticmethod
     def _format_documents(documents: DocumentCollection) -> str:
