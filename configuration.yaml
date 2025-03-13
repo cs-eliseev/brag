@@ -167,14 +167,8 @@ container:
   rag:
     provider: Factory
     provides: rag.modules.rag.simple_rag.SimpleRAG
-    kwargs:
-      retriever:
-        container: faiss__other_chunk
-      prompt:
-        container: prompt
-      llm:
-        container: llm
-      max_search_results: 3
+    kwargs_factory:
+      config: rag_factory.items
 
 # Indexer
   forward_indexer:
