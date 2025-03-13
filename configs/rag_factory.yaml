@@ -1,0 +1,177 @@
+items:
+  "other_chunk":
+    retriever:
+      container: faiss__other_chunk
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "documents":
+    retriever:
+      container: faiss__documents
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "documents_html":
+    retriever:
+      container: faiss__documents_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "documents_md":
+    retriever:
+      container: faiss__documents_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "512":
+    retriever:
+      container: faiss__512
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "512_64":
+    retriever:
+      container: faiss__512_64
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "1024":
+    retriever:
+      container: faiss__1024
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "1024_128":
+    retriever:
+      container: faiss__1024_128
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "2048":
+    retriever:
+      container: faiss__2048
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "2048_256":
+    retriever:
+      container: faiss__2048_256
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "512_html":
+    retriever:
+      container: faiss__512_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "512_64_html":
+    retriever:
+      container: faiss__512_64_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "1024_html":
+    retriever:
+      container: faiss__1024_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "1024_128_html":
+    retriever:
+      container: faiss__1024_128_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "2048_html":
+    retriever:
+      container: faiss__2048_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "2048_256_html":
+    retriever:
+      container: faiss__2048_256_html
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "512_md":
+    retriever:
+      container: faiss__512_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "512_64_md":
+    retriever:
+      container: faiss__512_64_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "1024_md":
+    retriever:
+      container: faiss__1024_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "1024_128_md":
+    retriever:
+      container: faiss__1024_128_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "2048_md":
+    retriever:
+      container: faiss__2048_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3
+  "2048_256_md":
+    retriever:
+      container: faiss__2048_256_md
+    prompt:
+      container: prompt
+    llm:
+      container: llm
+    max_search_results: 3

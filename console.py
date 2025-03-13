@@ -34,6 +34,6 @@ if __name__ == "__main__":
     ConsoleHandler(
         commands=Command(),
         console_service=ConsoleService(),
-        rag=container.rag(),
+        rag=container.rag__other_chunk(),
         log=container.log(),
     ).run()
