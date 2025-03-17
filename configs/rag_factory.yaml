@@ -175,3 +175,17 @@ items:
     llm:
       container: llm
     max_search_results: 3
+
+rag_factory:
+  items:
+    base:
+      retriever:
+        container: faiss
+      prompt:
+        container: prompt
+      llm:
+        container: llm
+      quality_analyzer:
+        container: quality_analyzer
+      max_search_results: 5
+      min_similarity_threshold: 0.5
