@@ -9,3 +9,17 @@ ${question}
 Дайте ответ на этот вопрос, используя только вышеуказанный контекст. 
 Используйте не более трех предложений и будьте лаконичны в ответе.
 Ответ:'
+
+  question_generator:
+    prompt: 'You are an expert in generating questions based on text. Your task is to analyze the provided document fragment and formulate between 2 and 10 questions in Russian that can be directly answered using only the information within the text. The questions should be clear, specific, and varied (e.g., addressing facts, details, or implications explicitly stated in the document). Do not include questions requiring external knowledge or assumptions beyond the text. Return only the result in JSON format, where the key "questions" contains a list of questions as strings, without any additional text outside the JSON. Here is the document fragment:
+${document}
+Example output:
+{
+  "questions": [
+    "Question 1",
+    "Question 2",
+    "...",
+    "Question 10"
+  ]
+}
+Now, generate questions in Russian based on the provided text that can be answered solely using the information in the document, and return only the JSON result.'

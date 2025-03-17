@@ -48,6 +48,18 @@ container:
     provider: Factory
     provides: rag.modules.file_loader.json.JsonFileLoader
 
+  json_file_service:
+    provider: Factory
+    provides: rag.services.json_file_service.JsonFileService
+
+  json_service:
+    provider: Factory
+    provides: rag.services.json_service.JSONService
+
+  backup_file_service:
+    provider: Factory
+    provides: rag.services.backup_file_service.BackupFileService
+
 # Drivers:
   embedding_driver:
     provider: Singleton
@@ -112,6 +124,25 @@ container:
     kwargs:
       prompt:
         config: prompts.items.base.prompt
+
+# Question Generator:
+  question_generator_prompt:
+    provider: Factory
+    provides: rag.entities.prompt.Prompt
+    kwargs:
+      prompt:
+        config: prompts.items.question_generator.prompt
+
+  question_generator_service:
+    provider: Factory
+    provides: rag.services.question_generator_service.QuestionGeneratorService
+    kwargs:
+      llm:
+        container: llm
+      prompt:
+        container: question_generator_prompt
+      json_service:
+        container: json_service
 
 # Retrievers:
   faiss:
