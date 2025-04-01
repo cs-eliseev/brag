@@ -3,7 +3,6 @@ from time import time
 from typing import Dict, Optional
 from rag.utils.logger import logger
 
-
 @dataclass
 class Metrics:
     start_time: float = field(default_factory=time)
@@ -14,7 +13,7 @@ class Metrics:
     additional_data: Dict = field(default_factory=dict)
 
 
-class MetricsCollector:
+class MetricsCollection:
     def __init__(self):
         self.metrics = {}
 

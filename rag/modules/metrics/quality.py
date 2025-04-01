@@ -6,7 +6,7 @@ import json
 import csv
 from pathlib import Path
 from rag.utils.logger import logger
-from rag.modules.monitoring.metrics import MetricsCollector
+from rag.modules.metrics.metrics import MetricsCollection
 
 @dataclass
 class SearchQualityMetrics:
@@ -38,7 +38,7 @@ class QueryAnalysis:
     timestamp: datetime = field(default_factory=datetime.now)
 
 class QualityAnalyzer:
-    def __init__(self, metrics_collector: MetricsCollector):
+    def __init__(self, metrics_collector: MetricsCollection):
         self.metrics_collector = metrics_collector
         self.search_metrics: List[SearchQualityMetrics] = []
         self.llm_metrics: List[LLMQualityMetrics] = []

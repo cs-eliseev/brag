@@ -8,6 +8,8 @@ from rag.utils.path import dataset_path
 from rag.utils.logger import logger
 from rag.commands.generate_questions_command import GenerateQuestionsCommand
 
+DEFAULT_INPUT = "datasets/dataset.json"
+
 class ValidationError(Exception):
     pass
 
@@ -20,23 +22,28 @@ class DocumentsNotFound(ValidationError):
         super().__init__(f"Documents not found")
 
 def validate_args(args: argparse.Namespace) -> None:
-    file_path = dataset_path(file=args.dataset)
+    file_path = dataset_path(file=args.input_file)
     if not file_path.is_file():
         raise FileNotFound(file_path)
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='Generate questions from documents')
     parser.add_argument(
-        '--dataset',
+        '--input_file',
         type=str,
-        required=True,
+        default=DEFAULT_INPUT,
         help='Input JSON file name (relative to datasets directory)'
     )
     parser.add_argument(
-        '--output',
+        '--output_file_name',
         type=str,
-        default='questions.json',
         help='Output file name for generated questions'
+    )
+    parser.add_argument(
+        '--output_dir',
+        type=str,
+        default="results",
+        help='Directory for saving results (default: results)'
     )
 
     args = parser.parse_args()
@@ -51,8 +58,12 @@ def main() -> None:
         json_service = container.json_service()
         backup_service = container.backup_file_service()
 
-        input_path = dataset_path(file=args.dataset)
-        output_path = Path(args.output)
+        input_path = dataset_path(file=args.input_file)
+        output_dir = Path(args.output_dir)
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_file_name = args.output_file_name if (hasattr(args, 'output_file_name')
+                                                     and args.output_file_name) else f"questions_{timestamp}"
+        output_path = output_dir / f"{output_file_name}.json"
 
         backup_service.backup(output_path)
         documents = list(json_file_service.read(input_path))
@@ -77,7 +88,6 @@ def main() -> None:
             end_time=end_time.strftime("%H:%M:%S"),
             duration_seconds=(end_time - start_time).total_seconds()
         )
-            
     except Exception as e:
         logger().error(f"{str(e)}\n{traceback.format_exc()}")
         sys.exit(1)
